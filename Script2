@@ -1,0 +1,230 @@
+USE [SendaBeta]
+GO
+ALTER TABLE [dbo].[Viaje] DROP CONSTRAINT [FK_Viaje_Ruta]
+GO
+ALTER TABLE [dbo].[Viaje] DROP CONSTRAINT [FK_Viaje_ChoferAutobus]
+GO
+ALTER TABLE [dbo].[Ruta] DROP CONSTRAINT [FK_Ruta_Estado1]
+GO
+ALTER TABLE [dbo].[Ruta] DROP CONSTRAINT [FK_Ruta_Estado]
+GO
+ALTER TABLE [dbo].[PasajeroBoleto] DROP CONSTRAINT [FK_PasajeroBoleto_Pasajero]
+GO
+ALTER TABLE [dbo].[PasajeroBoleto] DROP CONSTRAINT [FK_PasajeroBoleto_Boleto]
+GO
+ALTER TABLE [dbo].[ChoferAutobus] DROP CONSTRAINT [FK_ChoferAutobus_Chofer]
+GO
+ALTER TABLE [dbo].[ChoferAutobus] DROP CONSTRAINT [FK_ChoferAutobus_Autobus]
+GO
+ALTER TABLE [dbo].[Boleto] DROP CONSTRAINT [FK_Boleto_Viaje]
+GO
+/****** Object:  Table [dbo].[Viaje]    Script Date: 21/09/2018 11:45:50 p. m. ******/
+DROP TABLE [dbo].[Viaje]
+GO
+/****** Object:  Table [dbo].[Ruta]    Script Date: 21/09/2018 11:45:50 p. m. ******/
+DROP TABLE [dbo].[Ruta]
+GO
+/****** Object:  Table [dbo].[PasajeroBoleto]    Script Date: 21/09/2018 11:45:50 p. m. ******/
+DROP TABLE [dbo].[PasajeroBoleto]
+GO
+/****** Object:  Table [dbo].[Pasajero]    Script Date: 21/09/2018 11:45:50 p. m. ******/
+DROP TABLE [dbo].[Pasajero]
+GO
+/****** Object:  Table [dbo].[Estado]    Script Date: 21/09/2018 11:45:50 p. m. ******/
+DROP TABLE [dbo].[Estado]
+GO
+/****** Object:  Table [dbo].[ChoferAutobus]    Script Date: 21/09/2018 11:45:50 p. m. ******/
+DROP TABLE [dbo].[ChoferAutobus]
+GO
+/****** Object:  Table [dbo].[Chofer]    Script Date: 21/09/2018 11:45:50 p. m. ******/
+DROP TABLE [dbo].[Chofer]
+GO
+/****** Object:  Table [dbo].[Boleto]    Script Date: 21/09/2018 11:45:50 p. m. ******/
+DROP TABLE [dbo].[Boleto]
+GO
+/****** Object:  Table [dbo].[Autobus]    Script Date: 21/09/2018 11:45:50 p. m. ******/
+DROP TABLE [dbo].[Autobus]
+GO
+/****** Object:  Table [dbo].[Autobus]    Script Date: 21/09/2018 11:45:50 p. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Autobus](
+	[iIdAutobus] [int] NOT NULL,
+	[vMarca] [varchar](50) NOT NULL,
+	[iModelo] [int] NOT NULL,
+	[tCantPasajero] [tinyint] NOT NULL,
+	[vPlacas] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_Autobus] PRIMARY KEY CLUSTERED 
+(
+	[iIdAutobus] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Boleto]    Script Date: 21/09/2018 11:45:52 p. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Boleto](
+	[iIdBoleto] [int] NOT NULL,
+	[iIdViaje] [int] NOT NULL,
+	[vTipoBoleto] [varchar](50) NOT NULL,
+	[vNombrePasajero] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_Boleto] PRIMARY KEY CLUSTERED 
+(
+	[iIdBoleto] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Chofer]    Script Date: 21/09/2018 11:45:52 p. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Chofer](
+	[iIdChofer] [int] NOT NULL,
+	[vNomChofer] [varchar](50) NOT NULL,
+	[tEdadChofer] [tinyint] NOT NULL,
+	[iIdEmpleado] [int] NOT NULL,
+ CONSTRAINT [PK_Chofer] PRIMARY KEY CLUSTERED 
+(
+	[iIdChofer] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[ChoferAutobus]    Script Date: 21/09/2018 11:45:52 p. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[ChoferAutobus](
+	[iIdChoferAutobus] [int] NOT NULL,
+	[iIdChofer] [int] NOT NULL,
+	[iIdAutobus] [int] NOT NULL,
+ CONSTRAINT [PK_AutobusChofer] PRIMARY KEY CLUSTERED 
+(
+	[iIdChoferAutobus] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Estado]    Script Date: 21/09/2018 11:45:52 p. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Estado](
+	[iIdcuidad] [int] NOT NULL,
+	[vNomCiudad] [varchar](50) NOT NULL,
+	[iIdEstado] [int] NOT NULL,
+ CONSTRAINT [PK_Estado] PRIMARY KEY CLUSTERED 
+(
+	[iIdcuidad] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Pasajero]    Script Date: 21/09/2018 11:45:53 p. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Pasajero](
+	[iIdPasajero] [int] NOT NULL,
+	[vNombrePasajero] [varchar](50) NOT NULL,
+	[tEdadPasajero] [tinyint] NOT NULL,
+ CONSTRAINT [PK_Pasajero] PRIMARY KEY CLUSTERED 
+(
+	[iIdPasajero] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[PasajeroBoleto]    Script Date: 21/09/2018 11:45:53 p. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[PasajeroBoleto](
+	[iIdPasajero] [int] NOT NULL,
+	[iIdBoleto] [int] NOT NULL
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Ruta]    Script Date: 21/09/2018 11:45:53 p. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Ruta](
+	[iIdRuta] [int] NOT NULL,
+	[iIdCdOrigen] [int] NOT NULL,
+	[iIdCdDestino] [int] NOT NULL,
+	[gDistancia] [geography] NOT NULL,
+	[tTiempoEst] [time](7) NOT NULL,
+ CONSTRAINT [PK_Ruta] PRIMARY KEY CLUSTERED 
+(
+	[iIdRuta] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Viaje]    Script Date: 21/09/2018 11:45:53 p. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Viaje](
+	[iIdViaje] [int] NOT NULL,
+	[iIdRuta] [int] NOT NULL,
+	[iIdChoferAutobus] [int] NOT NULL,
+	[fechayhora] [datetime] NOT NULL,
+	[iIdEstado] [int] NOT NULL,
+ CONSTRAINT [PK_Viaje] PRIMARY KEY CLUSTERED 
+(
+	[iIdViaje] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[Boleto]  WITH CHECK ADD  CONSTRAINT [FK_Boleto_Viaje] FOREIGN KEY([iIdViaje])
+REFERENCES [dbo].[Viaje] ([iIdViaje])
+GO
+ALTER TABLE [dbo].[Boleto] CHECK CONSTRAINT [FK_Boleto_Viaje]
+GO
+ALTER TABLE [dbo].[ChoferAutobus]  WITH CHECK ADD  CONSTRAINT [FK_ChoferAutobus_Autobus] FOREIGN KEY([iIdAutobus])
+REFERENCES [dbo].[Autobus] ([iIdAutobus])
+GO
+ALTER TABLE [dbo].[ChoferAutobus] CHECK CONSTRAINT [FK_ChoferAutobus_Autobus]
+GO
+ALTER TABLE [dbo].[ChoferAutobus]  WITH CHECK ADD  CONSTRAINT [FK_ChoferAutobus_Chofer] FOREIGN KEY([iIdChofer])
+REFERENCES [dbo].[Chofer] ([iIdChofer])
+GO
+ALTER TABLE [dbo].[ChoferAutobus] CHECK CONSTRAINT [FK_ChoferAutobus_Chofer]
+GO
+ALTER TABLE [dbo].[PasajeroBoleto]  WITH CHECK ADD  CONSTRAINT [FK_PasajeroBoleto_Boleto] FOREIGN KEY([iIdBoleto])
+REFERENCES [dbo].[Boleto] ([iIdBoleto])
+GO
+ALTER TABLE [dbo].[PasajeroBoleto] CHECK CONSTRAINT [FK_PasajeroBoleto_Boleto]
+GO
+ALTER TABLE [dbo].[PasajeroBoleto]  WITH CHECK ADD  CONSTRAINT [FK_PasajeroBoleto_Pasajero] FOREIGN KEY([iIdPasajero])
+REFERENCES [dbo].[Pasajero] ([iIdPasajero])
+GO
+ALTER TABLE [dbo].[PasajeroBoleto] CHECK CONSTRAINT [FK_PasajeroBoleto_Pasajero]
+GO
+ALTER TABLE [dbo].[Ruta]  WITH CHECK ADD  CONSTRAINT [FK_Ruta_Estado] FOREIGN KEY([iIdCdOrigen])
+REFERENCES [dbo].[Estado] ([iIdcuidad])
+GO
+ALTER TABLE [dbo].[Ruta] CHECK CONSTRAINT [FK_Ruta_Estado]
+GO
+ALTER TABLE [dbo].[Ruta]  WITH CHECK ADD  CONSTRAINT [FK_Ruta_Estado1] FOREIGN KEY([iIdCdDestino])
+REFERENCES [dbo].[Estado] ([iIdcuidad])
+GO
+ALTER TABLE [dbo].[Ruta] CHECK CONSTRAINT [FK_Ruta_Estado1]
+GO
+ALTER TABLE [dbo].[Viaje]  WITH CHECK ADD  CONSTRAINT [FK_Viaje_ChoferAutobus] FOREIGN KEY([iIdChoferAutobus])
+REFERENCES [dbo].[ChoferAutobus] ([iIdChoferAutobus])
+GO
+ALTER TABLE [dbo].[Viaje] CHECK CONSTRAINT [FK_Viaje_ChoferAutobus]
+GO
+ALTER TABLE [dbo].[Viaje]  WITH CHECK ADD  CONSTRAINT [FK_Viaje_Ruta] FOREIGN KEY([iIdRuta])
+REFERENCES [dbo].[Ruta] ([iIdRuta])
+GO
+ALTER TABLE [dbo].[Viaje] CHECK CONSTRAINT [FK_Viaje_Ruta]
+GO
