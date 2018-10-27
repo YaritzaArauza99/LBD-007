@@ -7,11 +7,6 @@ select e.vNombre as 'Nombre', e.cTipoEmpleado as 'TipoEmpleado',
  on e.iIdEmpleado = v.iIdEmpleado
 
 
-create procedure Vista1 as
-Update BoletoAutobus set tAsiento = 1
-where tAsiento = 2 
-
-
 create procedure Vista2 
 @vNombre varchar(100),
 @TipoEmpleado char (10)
@@ -23,6 +18,10 @@ Create procedure Vista3
 @vOrigen varchar(150)
 as
 select * from Viajes where vOrigen=@vOrigen
+
+create procedure Vista1 as
+Update BoletoAutobus set tAsiento = 1
+where tAsiento = 2 
 
 
 create procedure Vista4
