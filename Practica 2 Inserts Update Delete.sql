@@ -102,35 +102,35 @@ insert into BoletoAutobus
 select * from TipoBoleto
 
 insert into TipoBoleto
-(iCostoBoleto, cBoletoNiño, cBoletoEstudiante, cBoletoAdulto, cBoletoAdultoMayor) values (500, 'N', '0', '0', '0')
+(iCostoBoleto, cBoletoNiÃ±o, cBoletoEstudiante, cBoletoAdulto, cBoletoAdultoMayor) values (500, 'N', '0', '0', '0')
 insert into TipoBoleto
-(iCostoBoleto, cBoletoNiño, cBoletoEstudiante, cBoletoAdulto, cBoletoAdultoMayor) values (1000, '0', '0', 'A', '0')
+(iCostoBoleto, cBoletoNiÃ±o, cBoletoEstudiante, cBoletoAdulto, cBoletoAdultoMayor) values (1000, '0', '0', 'A', '0')
 insert into TipoBoleto
-(iCostoBoleto, cBoletoNiño, cBoletoEstudiante, cBoletoAdulto, cBoletoAdultoMayor) values (1500, '0', '0', 'A', '0')
+(iCostoBoleto, cBoletoNiÃ±o, cBoletoEstudiante, cBoletoAdulto, cBoletoAdultoMayor) values (1500, '0', '0', 'A', '0')
 insert into TipoBoleto
-(iCostoBoleto, cBoletoNiño, cBoletoEstudiante, cBoletoAdulto, cBoletoAdultoMayor) values (700, 'N', '0', '0', 'AM')
+(iCostoBoleto, cBoletoNiÃ±o, cBoletoEstudiante, cBoletoAdulto, cBoletoAdultoMayor) values (700, 'N', '0', '0', 'AM')
 insert into TipoBoleto
-(iCostoBoleto, cBoletoNiño, cBoletoEstudiante, cBoletoAdulto, cBoletoAdultoMayor) values (550, 'N', '0', '0', '0')
+(iCostoBoleto, cBoletoNiÃ±o, cBoletoEstudiante, cBoletoAdulto, cBoletoAdultoMayor) values (550, 'N', '0', '0', '0')
 insert into TipoBoleto
-(iCostoBoleto, cBoletoNiño, cBoletoEstudiante, cBoletoAdulto, cBoletoAdultoMayor) values (560, 'N', '0', '0', '0')
+(iCostoBoleto, cBoletoNiÃ±o, cBoletoEstudiante, cBoletoAdulto, cBoletoAdultoMayor) values (560, 'N', '0', '0', '0')
 insert into TipoBoleto
-(iCostoBoleto, cBoletoNiño, cBoletoEstudiante, cBoletoAdulto, cBoletoAdultoMayor) values (1200, '0', '0', 'A', '0')
+(iCostoBoleto, cBoletoNiÃ±o, cBoletoEstudiante, cBoletoAdulto, cBoletoAdultoMayor) values (1200, '0', '0', 'A', '0')
 insert into TipoBoleto
-(iCostoBoleto, cBoletoNiño, cBoletoEstudiante, cBoletoAdulto, cBoletoAdultoMayor) values (2000, 'N', '0', 'A', '0')
+(iCostoBoleto, cBoletoNiÃ±o, cBoletoEstudiante, cBoletoAdulto, cBoletoAdultoMayor) values (2000, 'N', '0', 'A', '0')
 insert into TipoBoleto
-(iCostoBoleto, cBoletoNiño, cBoletoEstudiante, cBoletoAdulto, cBoletoAdultoMayor) values (800, '0', 'E', '0', '0')
+(iCostoBoleto, cBoletoNiÃ±o, cBoletoEstudiante, cBoletoAdulto, cBoletoAdultoMayor) values (800, '0', 'E', '0', '0')
 insert into TipoBoleto
-(iCostoBoleto, cBoletoNiño, cBoletoEstudiante, cBoletoAdulto, cBoletoAdultoMayor) values (850, '0', 'E', '0', '0')
+(iCostoBoleto, cBoletoNiÃ±o, cBoletoEstudiante, cBoletoAdulto, cBoletoAdultoMayor) values (850, '0', 'E', '0', '0')
 insert into TipoBoleto
-(iCostoBoleto, cBoletoNiño, cBoletoEstudiante, cBoletoAdulto, cBoletoAdultoMayor) values (900, '0', 'E', '0', '0')
+(iCostoBoleto, cBoletoNiÃ±o, cBoletoEstudiante, cBoletoAdulto, cBoletoAdultoMayor) values (900, '0', 'E', '0', '0')
 insert into TipoBoleto
-(iCostoBoleto, cBoletoNiño, cBoletoEstudiante, cBoletoAdulto, cBoletoAdultoMayor) values (950, '0', '0', 'A', '0')
+(iCostoBoleto, cBoletoNiÃ±o, cBoletoEstudiante, cBoletoAdulto, cBoletoAdultoMayor) values (950, '0', '0', 'A', '0')
 insert into TipoBoleto
-(iCostoBoleto, cBoletoNiño, cBoletoEstudiante, cBoletoAdulto, cBoletoAdultoMayor) values (1350, '0', '0', 'A', '0')
+(iCostoBoleto, cBoletoNiÃ±o, cBoletoEstudiante, cBoletoAdulto, cBoletoAdultoMayor) values (1350, '0', '0', 'A', '0')
 insert into TipoBoleto
-(iCostoBoleto, cBoletoNiño, cBoletoEstudiante, cBoletoAdulto, cBoletoAdultoMayor) values (1250, '0', '0', 'A', '0')
+(iCostoBoleto, cBoletoNiÃ±o, cBoletoEstudiante, cBoletoAdulto, cBoletoAdultoMayor) values (1250, '0', '0', 'A', '0')
 insert into TipoBoleto
-(iCostoBoleto, cBoletoNiño, cBoletoEstudiante, cBoletoAdulto, cBoletoAdultoMayor) values (750, '0', '0', '0', 'AM')
+(iCostoBoleto, cBoletoNiÃ±o, cBoletoEstudiante, cBoletoAdulto, cBoletoAdultoMayor) values (750, '0', '0', '0', 'AM')
 
 select * from CostoBoleto
 
